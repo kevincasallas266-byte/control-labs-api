@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 export class DashboardController {
   public static getSummary = (_req: Request, res: Response): void => {
-    res.status(200).json({
+    res.status(501).json({
       success: true,
       data: {
         usuarios: 0,
