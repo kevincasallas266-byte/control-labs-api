@@ -2,22 +2,25 @@ import { Request, Response } from 'express';
 
 export class EquipmentController {
   public static getEquipment = (req: Request, res: Response): void => {
-    res.status(200).json({
-      success: true,
+    res.status(501).json({
+      success: false,
       message: 'Listado de equipos.',
       filter: req.query
     });
   };
 
   public static createEquipment = (req: Request, res: Response): void => {
-    res.status(201).json({ success: true, message: 'Equipo registrado.', data: req.body });
+    res.status(501).json({ success: false, 
+      message: 'Equipo registrado.',
+    });
   };
 
   public static updateEquipment = (req: Request, res: Response): void => {
-    res.status(200).json({
-      success: true,
-      message: `Actualización parcial del equipo ${req.params.id}.`,
-      data: req.body
+    const{id}=req.params;
+    res.status(501).json({
+      success: false,
+      message: ` LA Actualización parcial del equipo ${id} .`,
+      
     });
   };
 }
