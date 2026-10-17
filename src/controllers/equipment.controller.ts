@@ -4,14 +4,14 @@ export class EquipmentController {
   public static getEquipment = (req: Request, res: Response): void => {
     res.status(501).json({
       success: false,
-      message: 'Listado de equipos.',
+      message: 'Listado de equipos no esta implementada .',
       filter: req.query
     });
   };
 
   public static createEquipment = (req: Request, res: Response): void => {
     res.status(501).json({ success: false, 
-      message: 'Equipo registrado.',
+      message: 'Equipo registrado no existe .',
     });
   };
 

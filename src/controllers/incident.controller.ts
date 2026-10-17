@@ -2,18 +2,21 @@ import { Request, Response } from 'express';
 
 export class IncidentController {
   public static getIncidents = (_req: Request, res: Response): void => {
-    res.status(200).json({ success: true, message: 'Historial de novedades.' });
+    res.status(501).json({ success: false, message: 'Historial de novedades no implementado.' });
   };
 
   public static createIncident = (req: Request, res: Response): void => {
-    res.status(201).json({ success: true, message: 'Novedad creada.', data: req.body });
+    res.status(501).json({
+       success: false,
+        message: 'Novedad no creada .' 
+    });
   };
 
   public static updateIncident = (req: Request, res: Response): void => {
-    res.status(200).json({
-      success: true,
-      message: `Actualización parcial de la novedad ${req.params.id}.`,
-      data: req.body
+    const{id} = req.params;
+    res.status(501).json({
+      success: false,
+      message: `Actualización parcial de la novedad no creada ${id}.`,
     });
   };
 }
