@@ -3,9 +3,11 @@ import express from 'express';
 import cors from 'cors';
 import apiRoutes from './routes';
 
+
 const app = express();
 
 app.use(cors());
+app.use(requestLogger);
 app.use(express.json());
 
 app.get('/api/v1/health', (_req, res) => {
@@ -17,5 +19,11 @@ app.get('/api/v1/health', (_req, res) => {
 });
 
 app.use('/api/v1', apiRoutes);
+
+app.use((_req, res) => {
+res.status(404).json({ success: false, error: 'Ruta no encontrada.' });
+});
+
+app.use(globalErrorHandler);
 
 export default app;
