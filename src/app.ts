@@ -2,7 +2,8 @@
 import express from 'express';
 import cors from 'cors';
 import apiRoutes from './routes';
-
+import { requestLogger } from './middlewares/logger.middleware';
+import { globalErrorHandler } from './middlewares/errorHandler.middleware';
 
 const app = express();
 
